@@ -20,9 +20,9 @@ users_collection.insert_many(users_data)
 
 #Step4: Add videos data
 videos_data = [
-    { 'video_id': 1, 'user_id': 1, 'title': "Video 1", 'views': 10000, 'likes': 500, 'created_at': 'datetime(2024,01,01)' },
-    { 'video_id': 2, 'user_id': 2, 'title': "Video 2", 'views': 20000, 'likes': 1500, 'created_at': 'datetime(2024,01,05)' },
-    { 'video_id': 3, 'user_id': 3, 'title': "Video 3", 'views': 5000, 'likes': 200, 'created_at': 'datetime(2024,01,10)' }
+    { 'video_id': 1, 'user_id': 1, 'title': "Video 1", 'views': 10000, 'likes': 500, 'created_at': datetime(2024,1,1) },
+    { 'video_id': 2, 'user_id': 2, 'title': "Video 2", 'views': 20000, 'likes': 1500, 'created_at': datetime(2024,1,5) },
+    { 'video_id': 3, 'user_id': 3, 'title': "Video 3", 'views': 5000, 'likes': 200, 'created_at': datetime(2024,1,10) }
 ]
 videos_collection.insert_many(videos_data)
 

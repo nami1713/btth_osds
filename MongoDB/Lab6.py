@@ -11,11 +11,11 @@ files_collection = db['files']
 
 #Step3: Add files data
 files_data = [
-    {'file_id': 1, 'name': "Report.pdf", 'size': 2048, 'owner': "Nguyen Van A", 'created_at': 'datetime("2024-01-10")', 'shared': 'false'},
-    {'file_id': 2, 'name': "Presentation.pptx", 'size': 5120, 'owner': "Tran Thi B", 'created_at': 'datetime("2024-01-15")', 'shared': 'true'},
-    {'file_id': 3, 'name': "Image.png", 'size': 1024, 'owner': "Le Van C", 'created_at': 'datetime("2024-01-20")', 'shared': 'false'},
-    {'file_id': 4, 'name': "Spreadsheet.xlsx", 'size': 3072, 'owner': "Pham Van D", 'created_at': 'datetime("2024-01-25")', 'shared': 'true'},
-    {'file_id': 5, 'name': "Notes.txt", 'size': 512, 'owner': "Nguyen Thi E", 'created_at': 'datetime("2024-01-30")', 'shared': 'false'}
+    {'file_id': 1, 'name': "Report.pdf", 'size': 2048, 'owner': "Nguyen Van A", 'created_at': datetime(2024,1,10), 'shared': 'false'},
+    {'file_id': 2, 'name': "Presentation.pptx", 'size': 5120, 'owner': "Tran Thi B", 'created_at': datetime(2024,1,15), 'shared': 'true'},
+    {'file_id': 3, 'name': "Image.png", 'size': 1024, 'owner': "Le Van C", 'created_at': datetime(2024,1,20), 'shared': 'false'},
+    {'file_id': 4, 'name': "Spreadsheet.xlsx", 'size': 3072, 'owner': "Pham Van D", 'created_at': datetime(2024,1,25), 'shared': 'true'},
+    {'file_id': 5, 'name': "Notes.txt", 'size': 512, 'owner': "Nguyen Thi E", 'created_at': datetime(2024,1,30), 'shared': 'false'}
 ]
 files_collection.insert_many(files_data)
 
@@ -67,7 +67,7 @@ print(smaller_file)
 
 #4.9. Tim tat ca file duoc tao trong thang 1 nam 2024
 print('\nCac file duoc tao trong thang 1 nam 2024 la:')
-created_file = files_collection.find({'created_at': {'$gte': 'datetime("2024-01-01")', '$lt': 'datetime("2024-02-01")'}})
+created_file = files_collection.find({'created_at': {'$gte': datetime(2024,1,1), '$lt': datetime(2024,2,1)}})
 for create in created_file:
     print(create)
 

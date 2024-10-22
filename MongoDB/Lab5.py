@@ -21,17 +21,17 @@ users_collection.insert_many(user_data)
 
 #Step4: add posts data
 posts_data = [
-    { 'post_id': 1, 'user_id': 1, 'content': "Hôm nay thật đẹp trời!", 'created_at': 'datetime("2024-10-01")' },
-    { 'post_id': 2, 'user_id': 2, 'content': "Mình vừa xem một bộ phim hay!", 'created_at': 'datetime("2024-10-02")' },
-    { 'post_id': 3, 'user_id': 1, 'content': "Chúc mọi người một ngày tốt lành!", 'created_at': 'datetime("2024-10-03")' }
+    { 'post_id': 1, 'user_id': 1, 'content': "Hôm nay thật đẹp trời!", 'created_at': datetime(2024,10,1) },
+    { 'post_id': 2, 'user_id': 2, 'content': "Mình vừa xem một bộ phim hay!", 'created_at': datetime(2024,10,2) },
+    { 'post_id': 3, 'user_id': 1, 'content': "Chúc mọi người một ngày tốt lành!", 'created_at': datetime(2024,10,3) }
 ]
 posts_collection.insert_many(posts_data)
 
 #step5: add comments data
 comments_data = [
-    { 'comment_id': 1, 'post_id': 1, 'user_id': 2, 'content': "Thật tuyệt vời!", 'created_at': 'datetime("2024-10-01")' },
-    { 'comment_id': 2, 'post_id': 2, 'user_id': 3, 'content': "Mình cũng muốn xem bộ phim này!", 'created_at': 'datetime("2024-10-02")' },
-    { 'comment_id': 3, 'post_id': 3, 'user_id': 1, 'content': "Cảm ơn bạn!", 'created_at': 'datetime("2024-10-03")' }
+    { 'comment_id': 1, 'post_id': 1, 'user_id': 2, 'content': "Thật tuyệt vời!", 'created_at': datetime(2024,10,1) },
+    { 'comment_id': 2, 'post_id': 2, 'user_id': 3, 'content': "Mình cũng muốn xem bộ phim này!", 'created_at': datetime(2024,10,2) },
+    { 'comment_id': 3, 'post_id': 3, 'user_id': 1, 'content': "Cảm ơn bạn!", 'created_at': datetime(2024,10,3) }
 ]
 comments_collection.insert_many(comments_data)
 
@@ -61,7 +61,7 @@ for age in user_ages:
 
 #6.5 truy van all posts được tạo trong tháng 10
 print("\nPost được tạo trong tháng 10:")
-posts_created = posts_collection.find({'created_at': {'$gte': 'datetime("2024-10-01")', '$lt': 'datetime("2024-11-01")'}})
+posts_created = posts_collection.find({'created_at': {'$gte': datetime(2024,10,1), '$lt': datetime(2024,11,1)}})
 for posts in posts_created:
     print(posts)
 
